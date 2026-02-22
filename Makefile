@@ -968,7 +968,7 @@ include scripts/Makefile.extrawarn
 include scripts/Makefile.ubsan
 
 # disable treating warnings as errors
-KBUILD_CFLAGS   += -Wno-error
+KBUILD_CFLAGS   += -Wno-error -Wno-strict-prototypes
 
 # Add any arch overrides and user supplied CPPFLAGS, AFLAGS and CFLAGS as the
 # last assignments
