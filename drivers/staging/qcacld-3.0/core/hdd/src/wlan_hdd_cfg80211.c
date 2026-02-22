@@ -2443,15 +2443,12 @@ static int wlan_hdd_sap_get_valid_channellist(struct hdd_adapter *adapter,
 					      uint32_t *freq_list,
 					      enum band_info band)
 {
-	struct sap_config *sap_config;
 	struct hdd_context *hdd_ctx = WLAN_HDD_GET_CTX(adapter);
 	uint32_t pcl_freqs[NUM_CHANNELS] = {0};
 	uint32_t chan_count;
 	uint32_t i;
 	QDF_STATUS status;
 	struct wlan_objmgr_pdev *pdev = hdd_ctx->pdev;
-
-	sap_config = &adapter->session.ap.sap_config;
 
 	status = policy_mgr_get_valid_chans(hdd_ctx->psoc,
 					    pcl_freqs,
@@ -17355,7 +17352,6 @@ static int __wlan_hdd_change_station(struct wiphy *wiphy,
 	QDF_STATUS status = QDF_STATUS_SUCCESS;
 	struct hdd_adapter *adapter = WLAN_HDD_GET_PRIV_PTR(dev);
 	struct hdd_context *hdd_ctx;
-	struct hdd_station_ctx *sta_ctx;
 	struct hdd_ap_ctx *ap_ctx;
 	struct qdf_mac_addr sta_macaddr;
 	int ret;
@@ -22124,7 +22120,6 @@ int __wlan_hdd_cfg80211_del_station(struct wiphy *wiphy,
 	struct hdd_context *hdd_ctx;
 	struct hdd_hostapd_state *hapd_state;
 	uint8_t *mac;
-	mac_handle_t mac_handle;
 	struct hdd_station_info *sta_info;
 
 	hdd_enter();

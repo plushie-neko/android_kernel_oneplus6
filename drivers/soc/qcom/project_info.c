@@ -11,6 +11,7 @@
 #include <linux/stat.h>
 #include <linux/string.h>
 #include <linux/types.h>
+#include <linux/mm.h>
 #include <linux/project_info.h>
 #include <soc/qcom/smem.h>
 #include <linux/gpio.h>
