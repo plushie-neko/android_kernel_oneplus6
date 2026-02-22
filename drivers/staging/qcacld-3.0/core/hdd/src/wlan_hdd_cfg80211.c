@@ -17352,6 +17352,7 @@ static int __wlan_hdd_change_station(struct wiphy *wiphy,
 	QDF_STATUS status = QDF_STATUS_SUCCESS;
 	struct hdd_adapter *adapter = WLAN_HDD_GET_PRIV_PTR(dev);
 	struct hdd_context *hdd_ctx;
+	struct hdd_station_ctx *sta_ctx;
 	struct hdd_ap_ctx *ap_ctx;
 	struct qdf_mac_addr sta_macaddr;
 	int ret;
@@ -22120,6 +22121,7 @@ int __wlan_hdd_cfg80211_del_station(struct wiphy *wiphy,
 	struct hdd_context *hdd_ctx;
 	struct hdd_hostapd_state *hapd_state;
 	uint8_t *mac;
+	mac_handle_t mac_handle;
 	struct hdd_station_info *sta_info;
 
 	hdd_enter();

@@ -954,6 +954,9 @@ KBUILD_CFLAGS   += $(call cc-option,-Werror=designated-init)
 # change __FILE__ to the relative path from the srctree
 KBUILD_CFLAGS	+= $(call cc-option,-fmacro-prefix-map=$(srctree)/=)
 
+# disable treating warnings as errors
+KBUILD_CFLAGS   += -Wno-error
+
 # ensure -fcf-protection is disabled when using retpoline as it is
 # incompatible with -mindirect-branch=thunk-extern
 ifdef CONFIG_RETPOLINE
